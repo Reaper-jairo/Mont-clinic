@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itAgenda"
+        android:title="Agenda de horas"
+        android:icon="@android:drawable/ic_menu_my_calendar" />
+    <item
+        android:id="@+id/itSolicitar"
+        android:title="Solicitar hora"
+        android:icon="@android:drawable/ic_input_add" />
+    <item
+        android:id="@+id/itVolver"
+        android:title="Volver"
+        android:icon="@android:drawable/ic_media_previous" />
+</menu>
