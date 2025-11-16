@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ajustes para orientación horizontal -->
+    
+    <!-- Reducir padding vertical en landscape -->
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    
+    <!-- Reducir spacing vertical -->
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+</resources>
+

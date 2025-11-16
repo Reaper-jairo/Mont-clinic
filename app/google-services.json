@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251479190855",
+    "project_id": "mont-clinic",
+    "storage_bucket": "mont-clinic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251479190855:android:51bb52b6b77497e3cab062",
+        "android_client_info": {
+          "package_name": "com.example.proyectoandroid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD6wbqQS6hNGxyFa86gOnFSSrfeZrhl9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

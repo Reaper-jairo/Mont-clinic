@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nombre del medicamento -->
+        <TextView
+            android:id="@+id/tvNombreMedicamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Medicamento"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Dosis y Frecuencia -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvDosis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dosis: —"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvFrecuencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Fechas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvFechaInicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Desde: —"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvFechaFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hasta: —"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Médico -->
+        <TextView
+            android:id="@+id/tvMedico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recetado por: —"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Estado -->
+        <TextView
+            android:id="@+id/tvEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activo"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/bg_estado"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Observaciones -->
+        <TextView
+            android:id="@+id/tvObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observaciones"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+

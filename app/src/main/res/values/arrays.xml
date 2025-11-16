@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos_cita">
+        <item>Consulta</item>
+        <item>Control</item>
+        <item>Examen</item>
+        <item>Urgencia</item>
+    </string-array>
+</resources>
+

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Barra lateral izquierda mejorada -->
+    <com.google.android.material.navigationrail.NavigationRailView
+        android:id="@+id/navRail"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/surface"
+        android:paddingTop="@dimen/spacing_xlarge"
+        android:paddingBottom="@dimen/spacing_xlarge"
+        app:menu="@menu/menu_informacion_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/text_primary"
+        app:itemRippleColor="@color/primary_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/footerGps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <!-- Header con título y botón modo noche -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingBottom="@dimen/spacing_small"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/navRail"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Título de bienvenida -->
+        <TextView
+            android:id="@+id/tvBienvenida"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bienvenido"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Bienvenido, Francisco Zamorano" />
+
+        <!-- Botones de configuración -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/spacing_medium">
+            
+            <!-- Botón brillo automático -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBrilloAuto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☀️"
+                android:textSize="@dimen/text_size_xlarge"
+                app:cornerRadius="@dimen/corner_radius_xlarge"
+                app:backgroundTint="@color/primary_light"
+                android:minWidth="@dimen/min_touch_target"
+                android:minHeight="@dimen/min_touch_target"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:contentDescription="@string/content_desc_brillo_auto" />
+            
+            <!-- Botón modo noche -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModoNoche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌙"
+                android:textSize="@dimen/text_size_xlarge"
+                app:cornerRadius="@dimen/corner_radius_xlarge"
+                app:backgroundTint="@color/primary_light"
+                android:minWidth="@dimen/min_touch_target"
+                android:minHeight="@dimen/min_touch_target"
+                android:contentDescription="@string/content_desc_modo_noche" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Contenido central con mejor diseño -->
+    <ScrollView
+        android:id="@+id/scrollContenido"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:padding="@dimen/padding_medium"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintBottom_toTopOf="@+id/footerGps"
+        app:layout_constraintStart_toEndOf="@id/navRail"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Subtítulo -->
+            <TextView
+                android:id="@+id/tvSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aquí está tu información médica"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="@dimen/spacing_large" />
+
+            <!-- Datos del Paciente mejorado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/corner_radius_xlarge"
+                app:cardElevation="@dimen/elevation_medium"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Datos del Paciente"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_myplaces"
+                            android:tint="@color/primary"
+                            android:contentDescription="@string/content_desc_icono_paciente" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre:"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_secondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNombrePaciente"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="—"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            tools:text="Juan Pérez González" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="RUT:"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_secondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvRutPaciente"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="—"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            tools:text="12.345.678-9" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Correo:"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_secondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvCorreoPaciente"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="—"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            tools:text="juan.perez@example.com" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Últimas atenciones mejorado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Últimas Atenciones"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:tint="@color/primary"
+                            android:contentDescription="@string/content_desc_icono_atenciones" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginBottom="16dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvUltimasAtenciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_atencion" />
+
+                    <TextView
+                        android:id="@+id/tvSinAtenciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sin_atenciones"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Próximas citas mejorado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Próximas Citas"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_my_calendar"
+                            android:tint="@color/primary"
+                            android:contentDescription="@string/content_desc_icono_citas" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider"
+                        android:layout_marginBottom="16dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProximasCitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_cita" />
+
+                    <TextView
+                        android:id="@+id/tvSinCitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sin_citas"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+        <!-- Footer fijo abajo - adaptado para diferentes dispositivos -->
+        <include
+            android:id="@+id/footerGps"
+            layout="@layout/footer_gps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

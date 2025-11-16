@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itAgenda"
+        android:title="Agenda"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itSolicitar"
+        android:title="Solicitar"
+        android:icon="@android:drawable/ic_input_add"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itMedicamentos"
+        android:title="Medicamentos"
+        android:icon="@android:drawable/ic_menu_compass"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itVolver"
+        android:title="Cerrar Sesión"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="ifRoom" />
+</menu>

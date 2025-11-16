@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+<ScrollView
+    android:id="@+id/scrollAgendarCita"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/footerGps"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large">
+
+            <!-- Botón Volver -->
+            <Button
+                android:id="@+id/btnVolverAgendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Volver"
+                android:textColor="@color/primary"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:contentDescription="@string/content_desc_boton_volver" />
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/spacing_xlarge">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agendar Nueva Cita"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Programe una nueva cita médica para el paciente"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Card de formulario -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- RUT del Paciente -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="RUT del Paciente (sin puntos ni guion)"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                    app:startIconTint="@color/primary"
+                    app:helperText="Ej: 123456789 o 12345678K"
+                    app:helperTextEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRutPacienteCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:maxLength="9"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Fecha -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de la Cita"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFechaCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Hora -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hora"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    app:startIconDrawable="@android:drawable/ic_menu_recent_history"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHoraCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="time"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        android:focusable="false"
+                        android:clickable="true"
+                        tools:text="10:30" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Médico -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Médico"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMedicoCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        tools:text="Dr. García" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Tipo de Cita -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Cita"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="4dp" />
+
+                <Spinner
+                    android:id="@+id/spTipoCita"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:background="@drawable/spinner_background"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
+
+                <!-- Motivo -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Motivo de la Cita"
+                    android:layout_marginBottom="24dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMotivoCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:textSize="16sp"
+                        tools:text="Consulta general" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Botón Agendar -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAgendarCita"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height_large"
+                        android:text="@string/btn_agendar_cita"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/corner_radius_medium"
+                        app:backgroundTint="@color/primary"
+                        android:textColor="@color/white"
+                        app:icon="@android:drawable/ic_menu_my_calendar"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/white"
+                        android:contentDescription="@string/content_desc_boton_agendar" />
+
+                    <!-- ProgressBar -->
+                    <ProgressBar
+                        android:id="@+id/progressAgendarCita"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        android:indeterminateTint="@color/primary"
+                        android:contentDescription="@string/content_desc_progress_bar"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
+
+<!-- Footer GPS -->
+<include
+    android:id="@+id/footerGps"
+    layout="@layout/footer_gps"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

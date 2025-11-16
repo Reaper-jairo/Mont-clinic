@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+<ScrollView
+    android:id="@+id/scrollRegistrarAtencion"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/footerGps"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/spacing_xlarge">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar Atención Médica"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registre los datos de la atención médica realizada"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Card de formulario -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- RUT del Paciente -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="RUT del Paciente"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRutPacienteAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Fecha -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFechaAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Médico -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Médico"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMedicoAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        tools:text="Dr. García" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Motivo -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Motivo de la Atención"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMotivoAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:textSize="16sp"
+                        tools:text="Control de presión arterial" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Diagnóstico -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Diagnóstico"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_compass"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDiagnosticoAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:textSize="16sp"
+                        tools:text="Presión arterial normal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Observaciones -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Observaciones"
+                    android:layout_marginBottom="24dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/primary"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etObservacionesAtencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="5"
+                        android:textSize="16sp"
+                        tools:text="Continuar con medicación actual" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Botón Registrar -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrarAtencion"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_large"
+                    android:text="@string/btn_registrar_atencion"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="@dimen/corner_radius_medium"
+                    app:backgroundTint="@color/primary"
+                    android:textColor="@color/white"
+                    app:icon="@android:drawable/ic_input_add"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white"
+                    android:contentDescription="@string/content_desc_boton_registrar_atencion" />
+
+                <!-- ProgressBar -->
+                <ProgressBar
+                    android:id="@+id/progressRegistrarAtencion"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/primary"
+                    android:contentDescription="@string/content_desc_progress_bar"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
+
+<!-- Footer GPS -->
+<include
+    android:id="@+id/footerGps"
+    layout="@layout/footer_gps"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

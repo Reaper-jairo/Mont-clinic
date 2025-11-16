@@ -1,0 +1,159 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">Mont Clinic</string>
+    
+    <!-- Login -->
+    <string name="login_title">Tunomático</string>
+    <string name="login_subtitle">* Solo afiliados a CESFAM pueden iniciar sesión.</string>
+    <string name="hint_rut">RUT</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_registrarse">¿No tienes cuenta? Regístrate</string>
+    <string name="btn_volver_login">← Volver al Login</string>
+    <string name="btn_volver">← Volver</string>
+    <string name="login_success">Inicio de sesión correcto</string>
+    
+    <!-- Información -->
+    <string name="bienvenido">Bienvenido</string>
+    <string name="bienvenido_usuario">Bienvenido, %1$s</string>
+    <string name="subtitulo_informacion">Aquí está tu información médica</string>
+    <string name="datos_paciente">Datos del Paciente</string>
+    <string name="ultimas_atenciones">Últimas atenciones</string>
+    <string name="proximas_citas">Próximas citas</string>
+    <string name="sin_atenciones">No hay atenciones recientes.</string>
+    <string name="sin_citas">No hay citas próximas.</string>
+    <string name="sin_medicamentos">No hay medicamentos registrados.</string>
+    
+    <!-- Registrar Paciente -->
+    <string name="titulo_registrar_paciente">Registrar Nuevo Paciente</string>
+    <string name="subtitulo_registrar_paciente">Complete el formulario para registrar un nuevo paciente en el sistema</string>
+    <string name="hint_rut_nuevo">RUT (sin puntos ni guion)</string>
+    <string name="helper_rut">Ej: 123456789 o 12345678K</string>
+    <string name="hint_nombre_completo">Nombre Completo</string>
+    <string name="hint_email">Correo Electrónico</string>
+    <string name="hint_password_nuevo">Contraseña</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_direccion">Dirección</string>
+    <string name="btn_registrar_paciente">Registrar Paciente</string>
+    <string name="btn_registrando">Registrando…</string>
+    <string name="info_registro">ℹ️ Información</string>
+    <string name="info_registro_texto">Al registrar un paciente, se creará automáticamente:\n• Usuario en Authentication\n• Índice en rut_index\n• Registro en pacientes</string>
+    <string name="registro_exitoso">Paciente registrado correctamente</string>
+    
+    <!-- Agendar Cita -->
+    <string name="titulo_agendar_cita">Agendar Nueva Cita</string>
+    <string name="subtitulo_agendar_cita">Programe una nueva cita médica para el paciente</string>
+    <string name="hint_rut_paciente_cita">RUT del Paciente (sin puntos ni guion)</string>
+    <string name="hint_fecha_cita">Fecha de la Cita</string>
+    <string name="hint_hora">Hora</string>
+    <string name="hint_medico">Médico</string>
+    <string name="hint_tipo_cita">Tipo de Cita</string>
+    <string name="hint_motivo_cita">Motivo de la Cita</string>
+    <string name="btn_agendar_cita">Agendar Cita</string>
+    <string name="btn_agendando">Agendando…</string>
+    <string name="cita_agendada_exitoso">Cita agendada correctamente</string>
+    
+    <!-- Registrar Atención -->
+    <string name="titulo_registrar_atencion">Registrar Atención Médica</string>
+    <string name="hint_fecha">Fecha</string>
+    <string name="hint_motivo">Motivo</string>
+    <string name="hint_diagnostico">Diagnóstico</string>
+    <string name="hint_observaciones">Observaciones</string>
+    <string name="btn_registrar_atencion">Registrar Atención</string>
+    <string name="btn_registrando_atencion">Registrando…</string>
+    <string name="atencion_registrada_exitoso">Atención registrada correctamente</string>
+    
+    <!-- Medicamentos -->
+    <string name="titulo_medicamentos">Medicamentos</string>
+    
+    <!-- Errores de Validación -->
+    <string name="error_rut_invalido">RUT inválido</string>
+    <string name="error_rut_obligatorio">RUT es obligatorio</string>
+    <string name="error_rut_no_encontrado">RUT no encontrado. Verifica que esté registrado o contacta a CESFAM.</string>
+    <string name="error_rut_formato">RUT inválido. Debe tener 7-8 dígitos seguidos de un dígito verificador (0-9 o K)</string>
+    <string name="error_email_invalido">El correo electrónico no es válido</string>
+    <string name="error_email_obligatorio">El correo electrónico es obligatorio</string>
+    <string name="error_email_ya_registrado">Este correo electrónico ya está registrado</string>
+    <string name="error_password_obligatorio">La contraseña es obligatoria</string>
+    <string name="error_password_corta">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="error_password_incorrecta">Contraseña incorrecta</string>
+    <string name="error_nombre_obligatorio">El nombre es obligatorio</string>
+    <string name="error_nombre_invalido">El nombre debe tener al menos 2 caracteres y solo letras</string>
+    <string name="error_telefono_invalido">El teléfono no es válido</string>
+    <string name="error_fecha_obligatoria">La fecha es obligatoria</string>
+    <string name="error_fecha_invalida">Fecha inválida. Use el formato correcto (dd/MM/yyyy)</string>
+    <string name="error_fecha_pasado">La fecha debe ser futura</string>
+    <string name="error_hora_obligatoria">La hora es obligatoria</string>
+    <string name="error_medico_obligatorio">El médico es obligatorio</string>
+    <string name="error_motivo_obligatorio">El motivo es obligatorio</string>
+    <string name="error_credenciales_incorrectas">Credenciales incorrectas. Verifica tu RUT y contraseña</string>
+    <string name="error_paciente_no_encontrado">No se encontró el paciente con ese RUT</string>
+    <string name="error_conexion">Error de conexión. Verifica tu internet e intenta nuevamente.</string>
+    <string name="error_inesperado">Error inesperado. Intenta nuevamente.</string>
+    <string name="error_guardar_datos">Error al guardar los datos. Intenta nuevamente.</string>
+    
+    <!-- Labels -->
+    <string name="label_nombre">Nombre: %1$s</string>
+    <string name="label_rut">RUT: %1$s</string>
+    <string name="label_correo">Correo: %1$s</string>
+    <string name="label_medico">Médico: %1$s</string>
+    <string name="label_observaciones">Obs: %1$s</string>
+    <string name="label_desde">Desde: %1$s</string>
+    <string name="label_hasta">Hasta: %1$s</string>
+    <string name="label_desde_hasta">Desde: %1$s - Hasta: %2$s</string>
+    
+    <!-- Estados -->
+    <string name="estado_activo">Activo</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="estado_finalizado">Finalizado</string>
+    <string name="estado_confirmada">Confirmada</string>
+    <string name="estado_pendiente_cita">Pendiente</string>
+    <string name="estado_cancelada">Cancelada</string>
+    
+    <!-- GPS -->
+    <string name="gps_location">Ubicación GPS</string>
+    <string name="gps_inicializando">Ubicación: inicializando…</string>
+    <string name="gps_sin_direccion">Ubicación: sin dirección</string>
+    
+    <!-- Modo Noche -->
+    <string name="modo_noche_icon">🌙</string>
+    <string name="modo_dia_icon">☀️</string>
+    
+    <!-- Información adicional -->
+    <string name="na">—</string>
+    
+    <!-- Diálogos -->
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_aceptar">Aceptar</string>
+    
+    <!-- Confirmaciones -->
+    <string name="confirmar_registro_paciente">¿Deseas registrar este paciente?</string>
+    <string name="confirmar_agendar_cita">¿Deseas agendar esta cita?</string>
+    <string name="confirmar_registrar_atencion">¿Deseas registrar esta atención médica?</string>
+    <string name="titulo_confirmacion">Confirmar acción</string>
+    
+    <!-- Accesibilidad -->
+    <string name="content_desc_modo_noche">Cambiar modo noche</string>
+    <string name="content_desc_modo_dia">Cambiar modo día</string>
+    <string name="content_desc_boton_ingresar">Botón para iniciar sesión</string>
+    <string name="content_desc_boton_registrar">Botón para registrar nuevo paciente</string>
+    <string name="content_desc_boton_agendar">Botón para agendar cita</string>
+    <string name="content_desc_boton_registrar_atencion">Botón para registrar atención médica</string>
+    <string name="content_desc_boton_volver">Botón para volver atrás</string>
+    <string name="content_desc_progress_bar">Cargando</string>
+    <string name="content_desc_icono_paciente">Icono de información del paciente</string>
+    <string name="content_desc_icono_atenciones">Icono de atenciones médicas</string>
+    <string name="content_desc_icono_citas">Icono de citas médicas</string>
+    <string name="content_desc_icono_medicamentos">Icono de medicamentos</string>
+    <string name="content_desc_gps_location">Ubicación GPS actual</string>
+    <string name="content_desc_brillo_auto">Activar/desactivar brillo automático</string>
+    
+    <!-- Mensajes de brillo automático -->
+    <string name="brillo_auto_activado">Brillo automático activado</string>
+    <string name="brillo_auto_desactivado">Brillo automático desactivado</string>
+    
+    <!-- Errores de red -->
+    <string name="error_sin_conexion">No hay conexión a internet. Verifica tu conexión e intenta nuevamente.</string>
+    <string name="error_conexion_lenta">La conexión es lenta. Por favor, intenta nuevamente.</string>
+</resources>
