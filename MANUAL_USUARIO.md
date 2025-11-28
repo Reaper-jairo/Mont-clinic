@@ -17,7 +17,8 @@
 
 ## 1. Inicio de sesión
 
-![Pantalla de Login de la aplicación Tunomático](ruta/a/imagen-login.png)
+<img width="427" height="700" alt="image" src="https://github.com/user-attachments/assets/85a5972b-8ba7-4790-ab79-53fa7e033999" />
+
 
 ### ¿Para qué sirve?
 Permite que el usuario acceda con su RUT y contraseña al sistema Tunomático.
