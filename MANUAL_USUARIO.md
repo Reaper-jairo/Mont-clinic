@@ -47,7 +47,8 @@ Permite que el usuario acceda con su RUT y contraseña al sistema Tunomático.
     * Medicamentos
     * Cerrar sesión
 
-![Menú lateral con datos del paciente](ruta/a/imagen-menu-lateral.png)
+<img width="499" height="369" alt="image" src="https://github.com/user-attachments/assets/0bdcf930-96a8-4c20-ab64-88191048b000" />
+
 
 ### Función principal del botón GPS
 Permite obtener la **ubicación del paciente** para asociarla a solicitudes o citas. La aplicación pedirá los permisos necesarios la primera vez que se use.
@@ -60,7 +61,8 @@ Para agendar una nueva cita en la aplicación Tunomático, tienes que ir al bot�
 
 Apretando ese botón, serás dirigido a la siguiente pantalla de formulario:
 
-![Formulario para Agendar Nueva Cita](ruta/a/imagen-agendar-cita.png)
+<img width="330" height="568" alt="image" src="https://github.com/user-attachments/assets/f0f00cd6-174f-41dd-8480-63e85fc383f2" />
+
 
 ### ¿Qué hace cada campo?
 
@@ -85,6 +87,7 @@ Apretando ese botón, serás dirigido a la siguiente pantalla de formulario:
 
 Esta vista permite que, si el doctor ha dejado recetas médicas por meses, el usuario pueda **reservar la hora para ir a retirar los medicamentos** previamente indicados por el doctor.
 
-![Pantalla de Mis Medicamentos sin registros](ruta/a/imagen-medicamentos.png)
+<img width="375" height="818" alt="image" src="https://github.com/user-attachments/assets/be2e43ca-0e66-4acf-a6c1-b4de8758dfce" />
+
 
 *Si no hay registros, mostrará: "No hay medicamentos registrados."*
